@@ -1,10 +1,10 @@
 [tool.poetry]
-name = "amqtt"
+name = "abmqtt"
 version = "0.11.0-beta1"
 description = "MQTT client/broker using Python asyncio"
-authors = ["aMQTT Contributers"]
+authors = ["abmqtt Contributers"]
 license = "MIT"
-homepage = "https://github.com/Yakifo/amqtt"
+homepage = "https://github.com/Yakifo/abmqtt"
 classifiers = [
         "Development Status :: 3 - Alpha",
         "Intended Audience :: Developers",
@@ -15,7 +15,7 @@ classifiers = [
         "Topic :: Internet",
 ]
 packages = [
-    { include = "amqtt" },
+    { include = "abmqtt" },
 ]
 
 [tool.poetry.dependencies]
@@ -44,29 +44,29 @@ pytest-logdog = "^0.1.0"
 psutil = "^5.9.0"
 
 [tool.poetry.scripts]
-amqtt = 'amqtt.scripts.broker_script:main'
-amqtt_pub = 'amqtt.scripts.pub_script:main'
-amqtt_sub = 'amqtt.scripts.sub_script:main'
+abmqtt = 'abmqtt.scripts.broker_script:main'
+abmqtt_pub = 'abmqtt.scripts.pub_script:main'
+abmqtt_sub = 'abmqtt.scripts.sub_script:main'
 
 [tool.poetry.plugins]
 
-[tool.poetry.plugins."amqtt.test.plugins"]
+[tool.poetry.plugins."abmqtt.test.plugins"]
 "test_plugin" = "tests.plugins.test_manager:EmptyTestPlugin"
 "event_plugin" = "tests.plugins.test_manager:EventTestPlugin"
-"packet_logger_plugin" = "amqtt.plugins.logging:PacketLoggerPlugin"
+"packet_logger_plugin" = "abmqtt.plugins.logging:PacketLoggerPlugin"
 
-[tool.poetry.plugins."amqtt.broker.plugins"]
-"event_logger_plugin" = "amqtt.plugins.logging:EventLoggerPlugin"
-"packet_logger_plugin" = "amqtt.plugins.logging:PacketLoggerPlugin"
-"auth_anonymous" = "amqtt.plugins.authentication:AnonymousAuthPlugin"
-"auth_file" = "amqtt.plugins.authentication:FileAuthPlugin"
-"topic_taboo" = "amqtt.plugins.topic_checking:TopicTabooPlugin"
-"topic_acl" = "amqtt.plugins.topic_checking:TopicAccessControlListPlugin"
-"broker_sys" = "amqtt.plugins.sys.broker:BrokerSysPlugin"
+[tool.poetry.plugins."abmqtt.broker.plugins"]
+"event_logger_plugin" = "abmqtt.plugins.logging:EventLoggerPlugin"
+"packet_logger_plugin" = "abmqtt.plugins.logging:PacketLoggerPlugin"
+"auth_anonymous" = "abmqtt.plugins.authentication:AnonymousAuthPlugin"
+"auth_file" = "abmqtt.plugins.authentication:FileAuthPlugin"
+"topic_taboo" = "abmqtt.plugins.topic_checking:TopicTabooPlugin"
+"topic_acl" = "abmqtt.plugins.topic_checking:TopicAccessControlListPlugin"
+"broker_sys" = "abmqtt.plugins.sys.broker:BrokerSysPlugin"
 
 
-[tool.poetry.plugins."amqtt.client.plugins"]
-"packet_logger_plugin" = "amqtt.plugins.logging:PacketLoggerPlugin"
+[tool.poetry.plugins."abmqtt.client.plugins"]
+"packet_logger_plugin" = "abmqtt.plugins.logging:PacketLoggerPlugin"
 
 
 [build-system]
